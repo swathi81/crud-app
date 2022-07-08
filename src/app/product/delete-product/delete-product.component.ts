@@ -19,7 +19,7 @@ export class DeleteProductComponent implements OnInit {
     this.dialogRef.close(false);
   }
   onConfirmDelete(){
-    this.dialogRef.close({status:true, deleteProductitemsId: this.data.editData.id, deleteProductitems: this.data.editData});
+    this.dialogRef.close({status:true, deleteProductitemsId: this.data.editProductData.id, deleteProductitems: this.data.editProductData.Name});
   }
 
 }

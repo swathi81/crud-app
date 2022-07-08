@@ -77,7 +77,7 @@ export class CategoryComponent implements OnInit {
     })
   }
 
-  delete(item:any){
+  delete(item: any) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
@@ -91,7 +91,12 @@ export class CategoryComponent implements OnInit {
     const dialogRef = this.dialog.open(DeleteCategoryComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(dialogResult => {
       if (dialogResult) {
-        this.category.splice( 0,dialogResult.deleteCategoryiemsId);
+        for (let i = 0; i < this.category.length; ++i) {
+          if (this.category[i].id === dialogResult.deleteCategoryiemsId) {
+            this.category.splice(i, 1);
+          }
+        }
+
       }
     })
   }

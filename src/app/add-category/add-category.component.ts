@@ -35,11 +35,15 @@ export class AddCategoryComponent implements OnInit {
     this.dialogRef.close();
   }
   addCategory(){
+    if (this.categoryForm.invalid) {
+      this.categoryForm.markAllAsTouched();
+      return;
+    }else{
     if(!this.editValue){
     this.dialogRef.close({status:true, addCategory: true, categoryData: this.name.value});
     }else{
       this.dialogRef.close({status: true, categoryData: this.name.value, id: this.data.editData.id})
     }
-    
+  }
   }
 }

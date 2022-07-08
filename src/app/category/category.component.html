@@ -4,28 +4,29 @@
        matSortDisableClear>
       <thead>
         <tr class="table-header header-bold">
-          <th mat-sort-header="name" width="30%" ><span >Category Id</span></th>
-          <th mat-sort-header="locationcode" width="10%"><span > Category Name</span></th>
-          <th mat-sort-header="address" width="15%"><span >Add</span></th>
-          <th mat-sort-header="city" width="12%"><span >Edit</span></th>
+          <th mat-sort-header="name" width="15%" ><span >Category Id</span></th>
+          <th mat-sort-header="locationcode" width="30%"><span > Category Name</span></th>
+          <th mat-sort-header="address" width="15%"><span >Add Category</span></th>
+          <th mat-sort-header="city" width="10%"><span >Edit Category</span></th>
+          <th mat-sort-header="city" width="10%"><span >Delete Category</span></th>
          
         </tr>
       </thead>
       <tbody>
         <tr class="pointer"  
           *ngFor="let item of category ">
-          <td width="30%" class="location-name " >
+          <td width="15%" class="location-name " >
             <span>
               {{item.id}} 
             </span>
           </td>
-          <td class="" width="10%">{{item.Name}}</td>
-          <td><span><mat-icon class="mt-2 matblue"  (click)="openDialog('add')">add_circle_outline</mat-icon></span></td>
-          <td>
-            <span>Edit<mat-icon class="mt-2 matblue" (click)="openDialog(item)">edit</mat-icon></span>
+          <td class="location-name" width="30%">{{item.Name}}</td>
+          <td class="location-name"><span><mat-icon class="mt-2 matblue"  (click)="openDialog('add')">add_circle_outline</mat-icon></span></td>
+          <td class="location-name">
+            <span><mat-icon class="mt-2 matblue" (click)="openDialog(item)">edit</mat-icon></span>
           </td>
-          <td>
-            <span>Delete <mat-icon class="mt-2 matblue" (click)="delete(item)">delete</mat-icon></span>
+          <td class="location-name">
+            <span><mat-icon class="mt-2 matblue" (click)="delete(item)">delete</mat-icon></span>
           </td>
         </tr>
       </tbody>

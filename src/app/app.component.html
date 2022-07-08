@@ -1,16 +1,20 @@
-<nav>
-    <a class="button"
+<header class="custom-header">
+  <div class=" header-img">
+    <img  src="../assets/logo-atom-symbol-and-type-horizontal.svg"/>
+  </div>
+<nav class="float-end pr-4 pt-4">
+    <a class="button nav-style"
        routerLink="/category"
        routerLinkActive="activebutton"
        ariaCurrentWhenActive="page">
-      Category
+       <mat-icon class="home-icon">home</mat-icon> Category
     </a> |
-    <a class="button"
+    <a class="button nav-style"
        routerLink="/products"
        routerLinkActive="activebutton"
        ariaCurrentWhenActive="page">
-      Products
+       <mat-icon class="home-icon">list</mat-icon> Products
     </a>
   </nav>
   <router-outlet></router-outlet>
-<!-- <app-category></app-category> -->
+</header>

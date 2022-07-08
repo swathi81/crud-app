@@ -4,30 +4,31 @@
        matSortDisableClear>
       <thead>
         <tr class="table-header header-bold">
-          <th mat-sort-header="name" width="30%" ><span >Name</span></th>
-          <th mat-sort-header="locationcode" width="10%"><span > Category </span></th>
-          <th mat-sort-header="locationcode" width="10%"><span > Price </span></th>
-          <th mat-sort-header="address" width="15%"><span >Add</span></th>
-          <th mat-sort-header="city" width="12%"><span >Edit</span></th>
+          <th mat-sort-header="name" width="20%" ><span >Name</span></th>
+          <th mat-sort-header="locationcode" width="20%"><span > Category </span></th>
+          <th mat-sort-header="locationcode" width="20%"><span > Price </span></th>
+          <th mat-sort-header="address" width="10%"><span >Add</span></th>
+          <th mat-sort-header="city" width="10%"><span >Edit</span></th>
+          <th mat-sort-header="city" width="10%"><span >Delete</span></th>
          
         </tr>
       </thead>
       <tbody>
         <tr class="pointer"  
           *ngFor="let item of productLits ">
-          <td width="30%" class="location-name " >
+          <td width="20%" class="location-name" >
             <span>
               {{item.Name}} 
             </span>
           </td>
-          <td class="" width="10%">{{item.Category}}</td>
-          <td class="" width="10%">{{item.Price}}</td>
-          <td><span><mat-icon class="mt-2 matblue" (click) = "addProduct()">add_circle_outline</mat-icon></span></td>
-          <td>
-            <span>Edit<mat-icon class="mt-2 matblue" (click) = "editProduct(item)">edit</mat-icon></span>
+          <td class="location-name" width="20%">{{item.Category}}</td>
+          <td class="location-name" width="20%">{{item.Price}}</td>
+          <td width="10%"><span><mat-icon class="mt-2 matblue" (click) = "addProduct()">add_circle_outline</mat-icon></span></td>
+          <td width="10%">
+            <span><mat-icon class="mt-2 matblue" (click) = "editProduct(item)">edit</mat-icon></span>
           </td>
-          <td>
-            <span>Delete <mat-icon class="mt-2 matblue" (click) = "deleteProduct(item)">delete</mat-icon></span>
+          <td width="10%">
+            <span><mat-icon class="mt-2 matblue" (click) = "deleteProduct(item)">delete</mat-icon></span>
           </td>
         </tr>
       </tbody>

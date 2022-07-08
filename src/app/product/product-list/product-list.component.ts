@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AddProductComponent } from '../add-product/add-product.component';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { EditProductComponent } from '../edit-product/edit-product.component';
+import { DeleteProductComponent } from '../delete-product/delete-product.component';
 
 @Component({
   selector: 'app-product-list',
@@ -115,11 +116,16 @@ export class ProductListComponent implements OnInit {
       editProductData: item,
       
     };
-    const dialogRef = this.dialog.open(EditProductComponent, dialogConfig);
+    const dialogRef = this.dialog.open(DeleteProductComponent, dialogConfig);
    
     dialogRef.afterClosed().subscribe(dialogResult => {
       if (dialogResult) {
-        this.productLits.splice( 0,dialogResult.deleteProductitemsId);
+        for (let i = 0; i < this.productLits.length; ++i) {
+          if (this.productLits[i].id === dialogResult.deleteProductitemsId) {
+            this.productLits.splice(i, 1);
+          }
+        }
+        
       }
     })
   }

@@ -1,0 +1,20 @@
+.custom-header{
+    height: 70px;
+    padding-top: 10px;
+    border-bottom: 1px solid #a9a3a3;
+    padding-bottom: 25px;
+    box-shadow: 1px 1px 2px #ccc;
+}
+.header-img{
+    display: inline-block;
+    width: 180px;
+    height: 100px;
+}
+.home-icon{
+    vertical-align: bottom;
+}
+.nav-style{
+    text-decoration: none;
+    font-size: 18px;
+    padding-left: 5px;
+}

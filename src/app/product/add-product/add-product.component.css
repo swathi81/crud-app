@@ -1,0 +1,17 @@
+.mat-dialog-container{
+    padding: 0px !important;
+}
+.pnp-modal-header{
+    background-color: #007ac9;
+    border: none;
+    color: #ffffff;
+    min-height: 66px;
+    padding-left: 20px;
+    padding-left: 10px;
+}
+.pl-4{
+    padding-left: 1.5rem !important;
+}
+.cust-margin{
+    margin-left: 10px;
+}
