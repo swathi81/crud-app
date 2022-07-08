@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.matblue {
+    color: #007ac9;
+}
+
+.mat-dialog-container{
+    padding: 0px !important;
+}
+
+.mat-dialog-content.mat-dialog-content.m-0.p-0.min-height {
+    overflow: hidden;
+}

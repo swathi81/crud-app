@@ -1,0 +1,78 @@
+<div class="pnp-modal-header d-flex">
+    <div class="d-flex flex-column flex-fill">
+      <h2 class="modal-sub-title m-0 p-0 mt-1">Add Producr</h2>
+    </div>
+    <button (click)="close()" type="button" class="modal-close-icon">
+      <mat-icon>clear</mat-icon>
+    </button>
+  </div>
+
+  <mat-dialog-content class="m-0 p-0 min-height">
+    <div class="m-0 pl-4 pr-4 pb-4 pt-3">
+      <form [formGroup]="productForm">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="modal-form-title m-0">Add a product that you want to list in the product list.</h2>
+          </div>
+  
+           <div class="col-lg-8 mt-3" >
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label class="interstate-normal f-16" >
+                Product Name</mat-label>
+               
+              <input matInput maxlength="80" formControlName="name" 
+                class="interstate-normal f-16">
+              <mat-hint>Required</mat-hint>
+              <mat-error *ngIf="name.hasError('required')">
+                This is required field
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-8 mt-3" >
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label class="interstate-normal f-16" >
+                Category</mat-label>
+               
+              <input matInput maxlength="80" formControlName="category" 
+                class="interstate-normal f-16">
+              <mat-hint>Required</mat-hint>
+              <mat-error *ngIf="category.hasError('category')">
+                RequiredValidation
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-8 mt-3" >
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label class="interstate-normal f-16" >
+                Price</mat-label>
+               
+              <input matInput maxlength="80" formControlName="price" 
+                class="interstate-normal f-16">
+              <mat-hint>Required</mat-hint>
+              
+              <mat-error *ngIf="price.hasError('required')">
+                RequiredValidation
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </mat-dialog-content>
+  <div fxLayout="row" class="pnp-modal-footer p-3">
+    
+    <div fxLayout="row" fxFlex="30">
+    </div>
+    <div fxLayout="row" fxFlex="70" fxLayoutAlign="flex-end">
+      <button type="button" fxFlex="0 1 196px" class="btn pnp-modal-btn-cancel mr-3" (click)="close()">
+        Cancel
+      </button>
+      <button type="button" fxFlex="0 1 196px" class="btn pnp-modal-btn-info"
+        (click)="addProduct()">
+        Add
+      </button>
+    </div>
+  </div>

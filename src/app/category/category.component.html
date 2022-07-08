@@ -1,0 +1,45 @@
+
+<div  class="list-container">
+    <table matSort class="table "
+       matSortDisableClear>
+      <thead>
+        <tr class="table-header header-bold">
+          <th mat-sort-header="name" width="30%" ><span >Category Id</span></th>
+          <th mat-sort-header="locationcode" width="10%"><span > Category Name</span></th>
+          <th mat-sort-header="address" width="15%"><span >Add</span></th>
+          <th mat-sort-header="city" width="12%"><span >Edit</span></th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="pointer"  
+          *ngFor="let item of category ">
+          <td width="30%" class="location-name " >
+            <span>
+              {{item.id}} 
+            </span>
+          </td>
+          <td class="" width="10%">{{item.Name}}</td>
+          <td><span><mat-icon class="mt-2 matblue"  (click)="openDialog('add')">add_circle_outline</mat-icon></span></td>
+          <td>
+            <span>Edit<mat-icon class="mt-2 matblue" (click)="openDialog(item)">edit</mat-icon></span>
+          </td>
+          <td>
+            <span>Delete <mat-icon class="mt-2 matblue" (click)="delete(item)">delete</mat-icon></span>
+          </td>
+        </tr>
+      </tbody>
+  
+    </table>
+  
+   
+  
+  
+  
+    
+  </div>
+  <div class="row mt-5" *ngIf="category && category.length==0">
+    <div class="col text-center f-18 interstate-normal">
+      <!-- <mat-label>{{'accountselector.NoResults' | translate}}</mat-label> -->
+    </div>
+  </div>

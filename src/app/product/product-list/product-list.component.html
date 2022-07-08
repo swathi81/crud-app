@@ -1,0 +1,48 @@
+
+<div  class="list-container">
+    <table matSort class="table "
+       matSortDisableClear>
+      <thead>
+        <tr class="table-header header-bold">
+          <th mat-sort-header="name" width="30%" ><span >Name</span></th>
+          <th mat-sort-header="locationcode" width="10%"><span > Category </span></th>
+          <th mat-sort-header="locationcode" width="10%"><span > Price </span></th>
+          <th mat-sort-header="address" width="15%"><span >Add</span></th>
+          <th mat-sort-header="city" width="12%"><span >Edit</span></th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="pointer"  
+          *ngFor="let item of productLits ">
+          <td width="30%" class="location-name " >
+            <span>
+              {{item.Name}} 
+            </span>
+          </td>
+          <td class="" width="10%">{{item.Category}}</td>
+          <td class="" width="10%">{{item.Price}}</td>
+          <td><span><mat-icon class="mt-2 matblue" (click) = "addProduct()">add_circle_outline</mat-icon></span></td>
+          <td>
+            <span>Edit<mat-icon class="mt-2 matblue" (click) = "editProduct(item)">edit</mat-icon></span>
+          </td>
+          <td>
+            <span>Delete <mat-icon class="mt-2 matblue" (click) = "deleteProduct(item)">delete</mat-icon></span>
+          </td>
+        </tr>
+      </tbody>
+  
+    </table>
+  
+   
+  
+  
+  
+    
+  </div>
+  <div class="row mt-5" *ngIf="productLits && productLits.length==0">
+    <div class="col text-center f-18 interstate-normal">
+      <mat-label>There is no Products found for this account</mat-label>
+    </div>
+  </div>
+
